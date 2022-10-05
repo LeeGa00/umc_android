@@ -42,11 +42,13 @@
         </TextView>
 
         <LinearLayout
+            android:id="@+id/profiles_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="@+id/setting_info"
             app:layout_constraintTop_toBottomOf="@+id/setting_info"
+            android:layout_marginTop="7dp"
             android:gravity="center">
 
             <LinearLayout
@@ -67,40 +69,118 @@
                     android:layout_height="wrap_content"
                     android:text="@string/user1"
                     android:textColor="@color/white"
-                    android:textSize="17sp"
+                    android:textSize="14sp"
                     android:layout_gravity="center"
                     android:layout_marginTop="5dp">
                 </TextView>
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="10dp">
 
-            <ImageView
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:src="@drawable/profileImg1"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp" />
+                <ImageView
+                    android:layout_width="68dp"
+                    android:layout_height="68dp"
+                    android:src="@drawable/profileImg1"
+                    android:layout_marginTop="10dp"/>
 
-            <ImageView
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:src="@drawable/profileImg1"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user2"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp">
+                </TextView>
+            </LinearLayout>
 
-            <ImageView
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:src="@drawable/profileImg1"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="10dp">
 
-            <ImageView
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:src="@drawable/profileImg1"
-                android:layout_marginTop="10dp"/>
+                <ImageView
+                    android:layout_width="68dp"
+                    android:layout_height="68dp"
+                    android:src="@drawable/profileImg1"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user3"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="10dp">
+
+                <ImageView
+                    android:layout_width="68dp"
+                    android:layout_height="68dp"
+                    android:src="@drawable/profileImg1"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/kids_profile_text"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="68dp"
+                    android:layout_height="68dp"
+                    android:src="@drawable/add_new_profile"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/new_user_button_info"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp">
+                </TextView>
+            </LinearLayout>
         </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edit_profile_setting"
+            android:backgroundTint="@android:color/transparent"
+            android:textColor="@color/netflix_gray_text"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/profiles_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingHorizontal="80dp"
+            android:drawableStart="@drawable/ic_edit1"
+            android:drawablePadding="5dp"
+            android:layout_marginTop="6dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -111,8 +191,103 @@
         app:layout_constraintHeight_percent="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cstLyTop"
-        app:layout_constraintWidth_percent="1">
+        app:layout_constraintWidth_percent="1"
+        android:layout_marginTop="20dp">
 
+        <LinearLayout
+            android:id="@+id/profile_setting_btns_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="10"
+            app:layout_constraintWidth_percent="0.9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/manage_notification"
+                android:backgroundTint="@color/netflix_gray"
+                android:textColor="@color/netflix_gray_text"
+                android:textSize="19sp"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_notifications1"
+                android:drawablePadding="5dp"
+                android:layout_marginTop="6dp"
+                android:drawableRight="@drawable/ic_right_arrow1"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/my_list_contents"
+                android:backgroundTint="@color/netflix_gray"
+                android:textColor="@color/netflix_gray_text"
+                android:textSize="19sp"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_list1"
+                android:drawablePadding="5dp"
+                android:layout_marginTop="6dp"
+                android:drawableRight="@drawable/ic_right_arrow1"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_setting"
+                android:backgroundTint="@color/netflix_gray"
+                android:textColor="@color/netflix_gray_text"
+                android:textSize="19sp"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_settings1"
+                android:drawablePadding="5dp"
+                android:layout_marginTop="6dp"
+                android:drawableRight="@drawable/ic_right_arrow1"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/account"
+                android:backgroundTint="@color/netflix_gray"
+                android:textColor="@color/netflix_gray_text"
+                android:textSize="19sp"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_person1"
+                android:drawablePadding="5dp"
+                android:layout_marginTop="6dp"
+                android:drawableRight="@drawable/ic_right_arrow1"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/client_center"
+                android:backgroundTint="@color/netflix_gray"
+                android:textColor="@color/netflix_gray_text"
+                android:textSize="19sp"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_question_mark"
+                android:drawablePadding="5dp"
+                android:layout_marginTop="6dp"
+                android:drawableRight="@drawable/ic_right_arrow1"
+                />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/logout"
+            android:backgroundTint="@android:color/transparent"
+            android:textColor="@color/netflix_gray_text"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/profile_setting_btns_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingHorizontal="80dp"
+            android:layout_marginTop="20dp"></Button>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
