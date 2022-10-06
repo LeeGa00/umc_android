@@ -41,7 +41,7 @@
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/profileImg1"
+                android:src="@drawable/profile_img1"
                 android:layout_marginStart="22dp"></ImageView>
         </Toolbar>
 
@@ -240,6 +240,7 @@
         </androidx.appcompat.widget.AppCompatButton>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/home_bottom_gameBtn"
             android:layout_width="100dp"
             android:layout_height="70dp"
             android:background="@android:color/transparent"

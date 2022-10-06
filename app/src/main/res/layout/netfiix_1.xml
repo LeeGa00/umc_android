@@ -61,7 +61,7 @@
                     android:id="@+id/main_profile"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/profileImg1"
+                    android:src="@drawable/profile_img1"
                     android:layout_marginTop="10dp" />
 
                 <TextView
@@ -84,7 +84,7 @@
                 <ImageView
                     android:layout_width="68dp"
                     android:layout_height="68dp"
-                    android:src="@drawable/profileImg1"
+                    android:src="@drawable/profile_img1"
                     android:layout_marginTop="10dp"/>
 
                 <TextView
@@ -107,7 +107,7 @@
                 <ImageView
                     android:layout_width="68dp"
                     android:layout_height="68dp"
-                    android:src="@drawable/profileImg1"
+                    android:src="@drawable/profile_img1"
                     android:layout_marginTop="10dp"/>
 
                 <TextView
@@ -130,7 +130,7 @@
                 <ImageView
                     android:layout_width="68dp"
                     android:layout_height="68dp"
-                    android:src="@drawable/profileImg1"
+                    android:src="@drawable/profile_img1"
                     android:layout_marginTop="10dp"/>
 
                 <TextView

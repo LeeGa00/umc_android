@@ -33,7 +33,7 @@
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/profileImg1"
+            android:src="@drawable/profile_img1"
             android:layout_marginStart="22dp"></ImageView>
     </Toolbar>
 
@@ -47,7 +47,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="415dp"
-            android:src="@drawable/gameIImg_lol1"></ImageView>
+            android:src="@drawable/gameimg_lol1"></ImageView>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -59,7 +59,7 @@
                 android:layout_width="130dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:src="@drawable/gameIImg_lol2"></ImageView>
+                android:src="@drawable/gameimg_lol1"></ImageView>
 
             <TextView
                 android:layout_width="wrap_content"
