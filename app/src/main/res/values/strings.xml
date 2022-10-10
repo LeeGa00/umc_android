@@ -33,4 +33,8 @@
     <string name="series_walking_dead_explain">아포칼립스  좀비  생존  시리즈물  시즌12</string>
     <string name="week3_standard1_edit_text">텍스트</string>
     <string name="send">전송</string>
+    <string name="move">이동</string>
+    <string name="choose1">1번 선택</string>
+    <string name="choose2">2번 선택</string>
+    <string name="select_fragment">Fragment 선택</string>
 </resources>
