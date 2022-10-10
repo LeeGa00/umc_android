@@ -6,41 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".ThirdActivity">
 
-    <TextView
-        android:id="@+id/explain_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="35sp"
-        android:text="@string/select_fragment"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+    <FrameLayout
+        android:id="@+id/frame_fragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="250dp"></TextView>
-
-    <Button
-        android:id="@+id/fragment_button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:text="@string/choose1"
-        app:layout_constraintTop_toBottomOf="@+id/explain_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
-        android:paddingStart="30dp"
-        android:paddingEnd="30dp"></Button>
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/fragment_button2"
-        android:layout_width="wrap_content"
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:text="@string/choose2"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_button1"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
-        android:paddingStart="30dp"
-        android:paddingEnd="30dp"></Button>
+        app:layout_constraintStart_toStartOf="parent">
 
+        <Button
+            android:id="@+id/btn_fragment1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/choose1" />
+
+        <Button
+            android:id="@+id/btn_fragment2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/choose2" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

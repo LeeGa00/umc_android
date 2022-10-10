@@ -11,5 +11,24 @@ class ThirdActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         viewBinding = ActivityThirdBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
+
+        supportFragmentManager
+            .beginTransaction()
+            .replace(viewBinding.frameFragment.id, FirstFragment())
+            .commitAllowingStateLoss()
+
+        viewBinding.btnFragment1.setOnClickListener{
+            supportFragmentManager
+                .beginTransaction()
+                .replace(viewBinding.frameFragment.id, FirstFragment())
+                .commitAllowingStateLoss()
+        }
+
+        viewBinding.btnFragment2.setOnClickListener{
+            supportFragmentManager
+                .beginTransaction()
+                .replace(viewBinding.frameFragment.id, SecondFragment())
+                .commitAllowingStateLoss()
+        }
     }
 }
