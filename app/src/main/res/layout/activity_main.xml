@@ -29,5 +29,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"
         android:paddingStart="30dp"
-        android:paddingEnd="30dp"></Button>
+        android:paddingEnd="30dp">
+    </Button>
 </androidx.constraintlayout.widget.ConstraintLayout>
