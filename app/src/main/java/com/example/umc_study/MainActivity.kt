@@ -2,18 +2,19 @@ package com.example.umc_study
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.umc_study.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var viewBinding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.netflix_3)
+        viewBinding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(viewBinding.root)
 
-        val activityChangeBtn = findViewById<Button>(R.id.home_bottom_gameBtn)
-
-        activityChangeBtn.setOnClickListener {
-            startActivity(Intent(this@MainActivity, SubActivity::class.java))
+        viewBinding.sendButton.setOnClickListener {
+            val intent = Intent(this, SecondActivity::class.java)
         }
     }
 }
