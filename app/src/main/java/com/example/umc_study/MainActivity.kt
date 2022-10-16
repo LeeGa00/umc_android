@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         viewBinding.sendButton.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
-            intent.putExtra("main_text", "text from main")
+            intent.putExtra("main_text", viewBinding.memoContent.text)
             startActivity(intent)
         }
     }
