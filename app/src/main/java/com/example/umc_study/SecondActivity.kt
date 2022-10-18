@@ -1,6 +1,5 @@
 package com.example.umc_study
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.umc_study.databinding.ActivitySecondBinding
@@ -18,9 +17,9 @@ class SecondActivity : AppCompatActivity() {
 
         viewBinding.getText.text = data
 
-        viewBinding.moveButton.setOnClickListener {
-            val intent = Intent(this, ThirdActivity::class.java)
-            startActivity(intent)
-        }
+        //viewBinding.moveButton.setOnClickListener {
+        //    val intent = Intent(this, ThirdActivity::class.java)
+        //    startActivity(intent)
+        //}
     }
 }
