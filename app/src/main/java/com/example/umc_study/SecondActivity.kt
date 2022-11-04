@@ -3,6 +3,7 @@ package com.example.umc_study
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,29 +12,13 @@ import com.example.umc_study.databinding.ActivitySecondBinding
 
 class SecondActivity : AppCompatActivity() {
     private lateinit var viewBinding: ActivitySecondBinding
-
-    private val REQUEST_CODE = 1100
+    private val dataList: ArrayList<MemoData> = arrayListOf()
+    private lateinit var resultLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewBinding = ActivitySecondBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
-
-        viewBinding.btnNewMemo.setOnClickListener(){
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-
-        //val extras = intent.extras
-        //val data = extras!!["main_text"] as String
-        //viewBinding.getText.text = data
-
-        //viewBinding.moveButton.setOnClickListener {
-        //    val intent = Intent(this, ThirdActivity::class.java)
-        //    startActivity(intent)
-        //}
-
-        val dataList: ArrayList<MemoData> = arrayListOf()
 
         dataList.apply {
             add(MemoData("memo1", "first memo!"))
@@ -60,22 +45,27 @@ class SecondActivity : AppCompatActivity() {
 
             }
 
-            override fun onRemoveAlbum(position: Int) {
+            override fun onRemoveMemo(position: Int) {
                 memoDataRVAdapter.removeItem(position)
             }
         })
-    }
 
-    fun openActivityForResult() {
-        startForResult.launch(Intent(this, MainActivity::class.java))
-    }
+        fun setNewMemo(){
+            resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result ->
+                if (result.resultCode == Activity.RESULT_OK){
+                    val title = result.data?.getStringExtra("title") ?: ""
+                    val content = result.data?.getStringExtra("content")?:""
 
-    val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-            result: ActivityResult ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            val intent = result.data
-            // Handle the Intent
-            //do stuff here
+                    memoDataRVAdapter.addItem(title, content)
+                }
+            }
+        }
+
+        setNewMemo()
+
+        viewBinding.btnNewMemo.setOnClickListener(){
+            val intent = Intent(this, MainActivity::class.java)
+            resultLauncher.launch(intent)
         }
     }
 }

@@ -26,7 +26,7 @@ class MemoDataRVAdapter(private val dataList: ArrayList<MemoData>) : RecyclerVie
         holder.bind(dataList[position])
         holder.itemView.setOnClickListener() {
             mItemClickListener.onItemClick(dataList[position])
-            mItemClickListener.onRemoveAlbum(position)
+            mItemClickListener.onRemoveMemo(position)
         }
     }
 
@@ -35,7 +35,7 @@ class MemoDataRVAdapter(private val dataList: ArrayList<MemoData>) : RecyclerVie
 
     interface MyItemClickListener{
         fun onItemClick(memo : MemoData)
-        fun onRemoveAlbum(position: Int)
+        fun onRemoveMemo(position: Int)
     }
 
     // listener 객체 전달 받는 함수 & 저장하는 변수
@@ -49,6 +49,12 @@ class MemoDataRVAdapter(private val dataList: ArrayList<MemoData>) : RecyclerVie
         dataList.removeAt(position)
         notifyItemRemoved(position)
         notifyItemRangeChanged(position, getItemCount());
+    }
+
+    fun addItem(title:String, content:String){
+        dataList.add(MemoData(title, content))
+        notifyItemInserted(dataList.size)
+        notifyItemRangeChanged(dataList.size, getItemCount());
     }
 
 }

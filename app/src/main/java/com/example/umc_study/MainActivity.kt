@@ -20,10 +20,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(viewBinding.root)
 
         viewBinding.sendButton.setOnClickListener {
-            val intent = Intent(this, SecondActivity::class.java)
-            intent.putExtra("memo_title", viewBinding.title.text.toString())
-            intent.putExtra("memo_text", viewBinding.memoContent.text.toString())
-            startActivity(intent)
+            if(viewBinding.title.length() == 0 || viewBinding.memoContent.length() == 0){
+                Toast.makeText(this, "입력하지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
+            } else {
+                val intent = Intent(this, SecondActivity::class.java)
+                intent.putExtra("title", viewBinding.title.text.toString())
+                intent.putExtra("content", viewBinding.memoContent.text.toString())
+                setResult(RESULT_OK, intent)
+                finish()
+            }
         }
     }
 
