@@ -12,4 +12,6 @@
     <color name="light_salmon">#FFA07A</color>
     <color name="background_yellow">#fffff5</color>
 
+    <color name="background_sign">#E2E2E2</color>
+
 </resources>
